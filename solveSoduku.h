@@ -1,9 +1,10 @@
+#pragma once
 #include <iostream>
 #include <algorithm>
 using namespace std;
 extern int sodu[9][9];
 extern int temp[9][9];
-bool Element(int count) 
+bool Element(int count)
 {
 	int row = count / 9;
 	int col = count % 9;
@@ -19,7 +20,7 @@ bool Element(int count)
 
 	for (j = 0; j < 9; ++j)
 	{
-		if (sodu[j][col] == sodu[row][col] && j != row) 
+		if (sodu[j][col] == sodu[row][col] && j != row)
 		{
 			return false;
 		}
@@ -44,7 +45,7 @@ bool Element(int count)
 
 void backtrace(int count)
 {
-	if (count == 81) 
+	if (count == 81)
 	{
 		for (int i = 0; i < 9; ++i)
 		{

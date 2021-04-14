@@ -1,3 +1,4 @@
+#pragma once
 #include<iostream>
 #include<time.h>
 using namespace std;
@@ -97,11 +98,11 @@ void makesoduku(int num)
 	while (!fill_the_form(0, 1));
 	for (int m = 1; m <= num; m++)
 	{
-		S1:int k;
+	S1:int k;
 		k = rand() % 81;
 		int i = k / 9;
 		int j = k % 9;
-		
+
 		if (sodu[j][i] == 0)
 			goto S1;
 		else
