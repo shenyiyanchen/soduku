@@ -8,6 +8,7 @@
 #include "solveSoduku.h"
 using namespace std;
 int sodu[9][9];
+char sodu_recv[9][9];
 int temp[9][9];
 
 int main(int argc, char* args[])
@@ -29,7 +30,14 @@ int main(int argc, char* args[])
 				{
 					for (int j = 0; j < 9; j++)
 					{
-						out << sodu[i][j] << " ";
+						if (sodu[i][j] == 0)
+						{
+							out << '$' << " ";
+						}
+						else
+						{
+							out << sodu[i][j] << " ";
+						}
 					}
 					out << endl;
 				}
@@ -51,7 +59,15 @@ int main(int argc, char* args[])
 			{
 				for (int j = 0; j < 9; j++)
 				{
-					in >> sodu[i][j];
+					in >> sodu_recv[i][j];
+					if (sodu_recv[i][j] != '$')
+					{
+						sodu[i][j]=sodu_recv[i][j]-'0';
+					}
+					else
+					{
+						sodu[i][j] = 0;
+					}
 					if (sodu[i][j] == 0)
 						fail++;
 					temp[i][j] = sodu[i][j];
@@ -75,7 +91,14 @@ int main(int argc, char* args[])
 				{
 					for (int j = 0; j < 9; j++)
 					{
-						out << sodu[i][j] << " ";
+						if (sodu[i][j] == 0)
+						{
+							out << '$' << " ";
+						}
+						else
+						{
+							out << sodu[i][j] << " ";
+						}
 					}
 					out << endl;
 				}
@@ -145,7 +168,14 @@ int main(int argc, char* args[])
 				{
 					for (int j = 0; j < 9; j++)
 					{
-						out << sodu[i][j] << " ";
+						if (sodu[i][j] == 0)
+						{
+							out << '$' << " ";
+						}
+						else
+						{
+							out << sodu[i][j] << " ";
+						}
 					}
 					out << endl;
 				}
